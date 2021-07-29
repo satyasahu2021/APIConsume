@@ -7,6 +7,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80
 
+ENV APIURL="https://webapiemp.azurewebsites.net/"
+
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY ["APIConsume.csproj", "."]
