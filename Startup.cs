@@ -10,16 +10,24 @@ using System.Threading.Tasks;
 
 
 
+
+
+
 namespace APIConsume
 {
 	public class Startup
 	{
+
+		public static string apiurl;
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
+		apiurl = configuration.GetValue<string>("APIURL");
 		}
 
 		public IConfiguration Configuration { get; }
+
+		
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
@@ -40,6 +48,8 @@ namespace APIConsume
 				app.UseHsts();
 
 			}
+
+			//var envurl =Environment.GetEnvironmentVariable("APIURL");
 
 			app.UseHttpsRedirection();
 

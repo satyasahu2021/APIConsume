@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\icon\edit.png" />
+    <Content Remove="wwwroot\icon\edit2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\icon\edit.png" />
+    <None Include="wwwroot\icon\edit2.png" />
   </ItemGroup>
 
 </Project>
