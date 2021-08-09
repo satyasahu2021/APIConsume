@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiconsume
+  namespace: mspoc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apiconsume
+  template:
+    metadata:
+      labels:
+        app: apiconsume
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: apiconsume
+        image: dhanreg.azurecr.io/satyendrasahu2021/apiconsume:4.0
+        env:
+        - name: APIURL
+          value: secret-sync@azurekeyvault
+        ports:
+        - containerPort: 80
+          name: apiconsume
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apiconsume
+  namespace: mspoc
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+  selector:
+    app: apiconsume
+
