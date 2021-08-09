@@ -17,7 +17,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: apiconsume
-        image: dhanreg.azurecr.io/satyendrasahu2021/apiconsume:4.0
+        image: satyendrasahu2021/apiconsume
         env:
         - name: APIURL
           value: secret-sync@azurekeyvault
