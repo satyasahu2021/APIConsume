@@ -31,7 +31,7 @@ metadata:
   name: apiconsume
   namespace: mspoc
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
   selector:

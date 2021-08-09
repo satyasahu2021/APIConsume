@@ -26,8 +26,4 @@
     <None Include="wwwroot\icon\edit2.png" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="manifest\" />
-  </ItemGroup>
-
 </Project>
